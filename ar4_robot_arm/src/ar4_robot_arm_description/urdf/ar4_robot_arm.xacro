@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ar4_robot_arm">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- ======================================================== -->
   <!-- |    Define world link and connect it to AR4 arm       | -->
   <!-- ======================================================== -->
-  <link name="world" />
+<xacro:macro name="ar4_robot_arm">
 
   <joint name="world_to_base_link" type="fixed">
       <parent link="world" />
@@ -423,4 +423,6 @@
     <limit upper="6.283185" lower="0.0" effort="100" velocity="100"/>
   </joint>
   
+
+</xacro:macro>
 </robot>
