@@ -1,5 +1,7 @@
 # 6DOF Robot Arm - Color Box Segregation
 
+
+
 A 6-DOF robotic arm that detects colored boxes and sorts them into matching bins. The
 arm is designed in CAD, simulated in Gazebo, motion-planned with MoveIt 2, and driven by
 a camera (RGB-D with color detection), then moved into Isaac Sim for a learned policy.
@@ -32,3 +34,5 @@ STEP (.step / .stp) is the shared format between SolidWorks and Fusion 360. Nati
 
 CAD files use Git LFS, so run `git lfs install` after cloning. Branch from main as
 feature/<name>, open a pull request, and merge after review.
+
+refer to [ar4_robot_arm](ar4_robot_arm) directory for simulation instructions

@@ -1,33 +1,40 @@
 # AR4 Robot Arm
+
 This is the ROS 2 project folder of the AR4 Robot Arm.
 
 To install each packages' dependencies, execute the following commands in your ROS 2 workspace directory:
+
 ```
 rosdep update
 rosdep install --from-paths src -y --ignore-src
 ```
 
-This project was tested using ROS 2 Jazzy and Ubuntu 24.04. Store the project folder in the `src` directory of your ROS 2 workspace directory, and include the following in your `~/.bashrc` file:
-```
-source /opt/ros/jazzy/setup.bash
-export LIBGL_ALWAYS_SOFTWARE=1
-export QT_QPA_PLATFORM=xcb
-source ~/{your ROS 2 workspace name}/install/setup.bash
-export GZ_IP=127.0.0.1
-export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/home/{username}/{your ROS 2 workspace name}/install/ar4_robot_arm/share
-```
+This project was tested using ROS 2 Jazzy and Ubuntu 24.04.
+make sure you set it up and source ros2 .
 
 Then build the packages while you are in your ROS 2 workspace directory:
+
+> make sure you are the ar4_robot_arm directory i.e the ros2 workspace for this project
+
 ```
-colcon build --packages-select ar4_robot_arm_description ar4_robot_arm_driver ar4_robot_arm_gazebo
+colcon build 
 ```
 
-To open the AR4 arm in RViz, execute this command:
+then
+
 ```
-ros2 launch ar4_robot_arm_description rviz.launch.py
+source install/setup.bash
 ```
 
-To open the AR4 arm in Gazebo, execute this command:
+To demo it in rviz,
+
 ```
-ros2 launch ar4_robot_arm_gazebo gazebo.launch.py
+ros2 launch ar4_robot_arm_moveit_setup demo.launch.py
+
 ```
+
+![alt text](image.png)
+
+>inside of rviz at the top left corner, set interactive marker size to 0.2  , now move your arm to a desired point. Hit plan and execute.
+
+
